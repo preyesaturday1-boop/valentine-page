@@ -1,0 +1,464 @@
+{\rtf1\ansi\ansicpg1252\cocoartf2867
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
+{\colortbl;\red255\green255\blue255;}
+{\*\expandedcolortbl;;}
+\paperw11900\paperh16840\margl1440\margr1440\vieww11520\viewh8400\viewkind0
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+
+\f0\fs24 \cf0 <!doctype html>\
+<html lang="en">\
+<head>\
+  <meta charset="utf-8" />\
+  <meta name="viewport" content="width=device-width, initial-scale=1" />\
+  <title>404 \uc0\u8594  Valentine</title>\
+  <style>\
+    :root\{\
+      --bg1:#ffdde1;\
+      --bg2:#ee9ca7;\
+      --card: rgba(255,255,255,.72);\
+      --text:#1d1b20;\
+      --muted:#4b4453;\
+      --shadow: 0 18px 40px rgba(0,0,0,.12);\
+      --radius: 22px;\
+      --ease: cubic-bezier(.2,.8,.2,1);\
+      --accent:#ff4d6d;\
+      --accent2:#7c3aed;\
+      --btnShadow: 0 10px 24px rgba(0,0,0,.12);\
+    \}\
+\
+    *\{ box-sizing:border-box; \}\
+    html,body\{ height:100%; \}\
+    body\{\
+      margin:0;\
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";\
+      color:var(--text);\
+      overflow:hidden;\
+      background: radial-gradient(1200px 800px at 20% 10%, rgba(255,255,255,.35), transparent 55%),\
+                  linear-gradient(135deg, var(--bg1), var(--bg2));\
+      transition: background 700ms var(--ease);\
+    \}\
+\
+    .wrap\{\
+      min-height:100%;\
+      display:grid;\
+      place-items:center;\
+      padding: clamp(16px, 3vw, 32px);\
+      position:relative;\
+    \}\
+\
+    .card\{\
+      width:min(720px, 92vw);\
+      background: var(--card);\
+      backdrop-filter: blur(12px);\
+      -webkit-backdrop-filter: blur(12px);\
+      border: 1px solid rgba(255,255,255,.55);\
+      border-radius: var(--radius);\
+      box-shadow: var(--shadow);\
+      padding: clamp(20px, 4vw, 34px);\
+      position:relative;\
+      overflow:hidden;\
+    \}\
+\
+    .shine\{\
+      position:absolute;\
+      inset:-40% -30%;\
+      background: radial-gradient(closest-side, rgba(255,255,255,.55), transparent 70%);\
+      transform: rotate(18deg);\
+      pointer-events:none;\
+      opacity:.35;\
+    \}\
+\
+    h1\{ margin:0 0 10px; font-size: clamp(28px, 4vw, 44px); letter-spacing:-.02em; \}\
+    p\{ margin:0; color:var(--muted); font-size: clamp(15px, 1.8vw, 18px); line-height:1.5; \}\
+\
+    .row\{\
+      display:flex;\
+      gap:12px;\
+      flex-wrap:wrap;\
+      justify-content:center;\
+      margin-top: 22px;\
+      position:relative;\
+    \}\
+\
+    .btn\{\
+      appearance:none;\
+      border: 0;\
+      border-radius: 999px;\
+      padding: 12px 18px;\
+      font-weight: 650;\
+      font-size: 15px;\
+      cursor:pointer;\
+      box-shadow: var(--btnShadow);\
+      transform: translateY(0);\
+      transition: transform 140ms var(--ease), box-shadow 200ms var(--ease), opacity 400ms var(--ease), filter 200ms var(--ease);\
+      user-select:none;\
+      -webkit-tap-highlight-color: transparent;\
+      position:relative;\
+    \}\
+    .btn:active\{ transform: translateY(1px) scale(.99); box-shadow: 0 6px 16px rgba(0,0,0,.12); \}\
+    .btn:focus-visible\{ outline: 3px solid rgba(124,58,237,.35); outline-offset: 4px; \}\
+\
+    .btn-primary\{\
+      color:white;\
+      background: linear-gradient(135deg, var(--accent), #ff8fab);\
+    \}\
+\
+    .btn-yes\{\
+      color:white;\
+      background: linear-gradient(135deg, #22c55e, #10b981);\
+    \}\
+\
+    .btn-no\{\
+      color:white;\
+      background: linear-gradient(135deg, #ef4444, #fb7185);\
+      position:relative;\
+    \}\
+\
+    .screen\{\
+      opacity: 1;\
+      transform: translateY(0);\
+      transition: opacity 520ms var(--ease), transform 520ms var(--ease);\
+    \}\
+\
+    .hidden\{\
+      opacity:0;\
+      transform: translateY(8px);\
+      pointer-events:none;\
+      position:absolute;\
+      inset: 0;\
+      padding: clamp(20px, 4vw, 34px);\
+    \}\
+\
+    /* keep the card height stable during transitions */\
+    .cardInner\{\
+      position:relative;\
+      min-height: 330px;\
+      display:grid;\
+      align-items:center;\
+    \}\
+\
+    .center\{\
+      text-align:center;\
+      max-width: 52ch;\
+      margin: 0 auto;\
+    \}\
+\
+    .badge\{\
+      display:inline-flex;\
+      align-items:center;\
+      gap:8px;\
+      padding: 8px 12px;\
+      border-radius: 999px;\
+      background: rgba(255,255,255,.72);\
+      border: 1px solid rgba(0,0,0,.06);\
+      box-shadow: 0 8px 20px rgba(0,0,0,.06);\
+      margin-bottom: 14px;\
+      font-weight: 650;\
+      color: rgba(0,0,0,.72);\
+    \}\
+\
+    .emoji\{\
+      font-size: 18px;\
+      filter: drop-shadow(0 6px 10px rgba(0,0,0,.12));\
+    \}\
+\
+    .agreement\{\
+      margin-top: 18px;\
+      padding: 16px 16px;\
+      border-radius: 16px;\
+      background: rgba(255,255,255,.62);\
+      border: 1px solid rgba(0,0,0,.06);\
+      box-shadow: 0 10px 24px rgba(0,0,0,.06);\
+      opacity:0;\
+      transform: translateY(8px);\
+      transition: opacity 500ms var(--ease), transform 500ms var(--ease);\
+    \}\
+\
+    .agreement.show\{\
+      opacity:1;\
+      transform: translateY(0);\
+    \}\
+\
+    .agreement ul\{\
+      margin: 10px 0 0;\
+      padding-left: 18px;\
+      text-align:left;\
+      color: var(--muted);\
+    \}\
+\
+    .agreement li\{ margin: 8px 0; \}\
+\
+    .devTag\{\
+      margin-top: 12px;\
+      display:inline-flex;\
+      align-items:center;\
+      gap:10px;\
+      padding: 10px 14px;\
+      border-radius: 999px;\
+      background: rgba(29,27,32,.08);\
+      border: 1px solid rgba(29,27,32,.10);\
+      color: rgba(29,27,32,.85);\
+      font-weight: 650;\
+      font-size: 14px;\
+    \}\
+\
+    /* Confetti */\
+    #confettiLayer\{\
+      position:fixed;\
+      inset:0;\
+      pointer-events:none;\
+      overflow:hidden;\
+      z-index: 50;\
+    \}\
+\
+    .confetti\{\
+      position:absolute;\
+      width: 10px;\
+      height: 14px;\
+      border-radius: 3px;\
+      opacity: .95;\
+      will-change: transform;\
+      animation: fall var(--dur) linear forwards;\
+    \}\
+\
+    @keyframes fall\{\
+      0%   \{ transform: translate3d(var(--x), -20px, 0) rotate(0deg); \}\
+      100% \{ transform: translate3d(calc(var(--x) + var(--drift)), calc(100vh + 40px), 0) rotate(720deg); \}\
+    \}\
+\
+    /* NO button jump uses fixed positioning */\
+    .no-fixed\{\
+      position: fixed !important;\
+      z-index: 40;\
+    \}\
+\
+    @media (max-width: 520px)\{\
+      .cardInner\{ min-height: 360px; \}\
+      .btn\{ width: min(240px, 78vw); \}\
+      .row\{ gap: 10px; \}\
+    \}\
+  </style>\
+</head>\
+<body>\
+  <div id="confettiLayer" aria-hidden="true"></div>\
+\
+  <main class="wrap">\
+    <section class="card" role="region" aria-label="Valentine flow">\
+      <div class="shine" aria-hidden="true"></div>\
+\
+      <div class="cardInner">\
+        <!-- Screen 1: 404 -->\
+        <div id="screen404" class="screen">\
+          <div class="center">\
+            <div class="badge"><span class="emoji">\uc0\u55358 \u56813 </span> 404 Error</div>\
+            <h1>Page Not Found</h1>\
+            <p>Oops \'97 it looks like this page took a little detour. Want to try again?</p>\
+            <div class="row" aria-label="404 actions">\
+              <button id="refreshBtn" class="btn btn-primary" type="button">Refresh</button>\
+            </div>\
+          </div>\
+        </div>\
+\
+        <!-- Screen 2: Valentine -->\
+        <div id="screenVal" class="screen hidden">\
+          <div class="center">\
+            <div class="badge"><span class="emoji">\uc0\u55357 \u56472 </span> Special Request</div>\
+            <h1>Will you be my Valentine?</h1>\
+            <p>Choose wisely. Your answer may cause spontaneous happiness.</p>\
+\
+            <div id="valButtons" class="row" aria-label="Valentine actions">\
+              <button id="yesBtn" class="btn btn-yes" type="button">YES</button>\
+              <button id="noBtn" class="btn btn-no" type="button">NO</button>\
+            </div>\
+\
+            <div id="agreement" class="agreement" aria-live="polite">\
+              <p><strong>By clicking YES you agree to:</strong></p>\
+              <ul>\
+                <li>Unlimited cuddles</li>\
+                <li>Lifetime supply of bad puns</li>\
+                <li>Mutual pizza stealing rights \'97 <strong>effective immediately!</strong></li>\
+              </ul>\
+              <div class="devTag">\uc0\u55358 \u56785 \u8205 \u55357 \u56507  full stack engineer.</div>\
+            </div>\
+          </div>\
+        </div>\
+      </div>\
+    </section>\
+  </main>\
+\
+  <script>\
+    // Elements\
+    const screen404 = document.getElementById('screen404');\
+    const screenVal = document.getElementById('screenVal');\
+    const refreshBtn = document.getElementById('refreshBtn');\
+    const yesBtn = document.getElementById('yesBtn');\
+    const noBtn = document.getElementById('noBtn');\
+    const valButtons = document.getElementById('valButtons');\
+    const agreement = document.getElementById('agreement');\
+    const confettiLayer = document.getElementById('confettiLayer');\
+\
+    // State\
+    let noClicks = 0;\
+    let yesChosen = false;\
+    let confettiTimer = null;\
+\
+    // Gradient presets (soft)\
+    const gradients = [\
+      ['#ffdde1', '#ee9ca7'],\
+      ['#dbeafe', '#c4b5fd'],\
+      ['#dcfce7', '#a7f3d0'],\
+      ['#ffe4e6', '#fecdd3'],\
+      ['#fde68a', '#fbcfe8'],\
+      ['#c7d2fe', '#fbcfe8'],\
+      ['#e9d5ff', '#bbf7d0']\
+    ];\
+\
+    function setGradient(pair)\{\
+      document.documentElement.style.setProperty('--bg1', pair[0]);\
+      document.documentElement.style.setProperty('--bg2', pair[1]);\
+    \}\
+\
+    // Transition between screens without replacing container\
+    function showValentine()\{\
+      // Fade out 404\
+      screen404.classList.add('hidden');\
+      // After a short moment, fade in Valentine\
+      window.setTimeout(() => \{\
+        screenVal.classList.remove('hidden');\
+      \}, 160);\
+    \}\
+\
+    refreshBtn.addEventListener('click', showValentine);\
+\
+    // Confetti\
+    function randomInt(min, max)\{\
+      return Math.floor(Math.random() * (max - min + 1)) + min;\
+    \}\
+\
+    function spawnConfettiPiece()\{\
+      const piece = document.createElement('div');\
+      piece.className = 'confetti';\
+\
+      // Random pastel-ish colors\
+      const colors = ['#ff4d6d', '#ff8fab', '#ffd6e0', '#7c3aed', '#22c55e', '#60a5fa', '#f59e0b'];\
+      piece.style.background = colors[randomInt(0, colors.length - 1)];\
+\
+      const x = randomInt(0, window.innerWidth);\
+      const drift = randomInt(-160, 160);\
+      const dur = randomInt(1800, 3200);\
+      const sizeW = randomInt(8, 12);\
+      const sizeH = randomInt(10, 16);\
+\
+      piece.style.width = sizeW + 'px';\
+      piece.style.height = sizeH + 'px';\
+      piece.style.setProperty('--x', x + 'px');\
+      piece.style.setProperty('--drift', drift + 'px');\
+      piece.style.setProperty('--dur', dur + 'ms');\
+\
+      // Slight random start delay\
+      piece.style.animationDelay = randomInt(0, 350) + 'ms';\
+\
+      confettiLayer.appendChild(piece);\
+\
+      // Cleanup\
+      window.setTimeout(() => piece.remove(), dur + 600);\
+    \}\
+\
+    function startConfettiFor(ms)\{\
+      confettiLayer.innerHTML = '';\
+      const start = Date.now();\
+\
+      function burst()\{\
+        if (Date.now() - start > ms) return;\
+        // Spawn a small burst each frame-ish\
+        for (let i = 0; i < 10; i++) spawnConfettiPiece();\
+        requestAnimationFrame(burst);\
+      \}\
+\
+      burst();\
+\
+      // Ensure layer clears after duration\
+      if (confettiTimer) clearTimeout(confettiTimer);\
+      confettiTimer = setTimeout(() => \{\
+        confettiLayer.innerHTML = '';\
+      \}, ms + 200);\
+    \}\
+\
+    // YES behavior\
+    yesBtn.addEventListener('click', () => \{\
+      if (yesChosen) return;\
+      yesChosen = true;\
+\
+      agreement.classList.add('show');\
+\
+      // Smoothly hide both YES and NO after 1s\
+      setTimeout(() => \{\
+        valButtons.style.opacity = '0';\
+        valButtons.style.transform = 'translateY(6px)';\
+        valButtons.style.transition = 'opacity 450ms var(--ease), transform 450ms var(--ease)';\
+        setTimeout(() => \{\
+          valButtons.style.display = 'none';\
+        \}, 480);\
+      \}, 1000);\
+\
+      // Confetti for 5 seconds\
+      startConfettiFor(5000);\
+    \});\
+\
+    // NO behavior\
+    function moveNoButton()\{\
+      // Make button jump to random spots on the screen\
+      // Convert to fixed-position so it can go anywhere\
+      if (!noBtn.classList.contains('no-fixed'))\{\
+        noBtn.classList.add('no-fixed');\
+      \}\
+\
+      const margin = 14;\
+      const rect = noBtn.getBoundingClientRect();\
+      const maxX = Math.max(margin, window.innerWidth - rect.width - margin);\
+      const maxY = Math.max(margin, window.innerHeight - rect.height - margin);\
+\
+      const x = randomInt(margin, maxX);\
+      const y = randomInt(margin, maxY);\
+\
+      noBtn.style.left = x + 'px';\
+      noBtn.style.top = y + 'px';\
+    \}\
+\
+    function randomizeBackground()\{\
+      const pair = gradients[randomInt(0, gradients.length - 1)];\
+      setGradient(pair);\
+    \}\
+\
+    noBtn.addEventListener('click', (e) => \{\
+      if (yesChosen) return;\
+\
+      noClicks += 1;\
+      moveNoButton();\
+      randomizeBackground();\
+\
+      // After two clicks, change the emoji to prompt continued jumping\
+      if (noClicks === 2)\{\
+        const badgeEmoji = screenVal.querySelector('.badge .emoji');\
+        if (badgeEmoji) badgeEmoji.textContent = '\uc0\u55357 \u56847 ';\
+\
+        const subtitle = screenVal.querySelector('p');\
+        if (subtitle) subtitle.textContent = 'Continue jumping until "YES" is clicked or the page is reloaded.';\
+      \}\
+\
+      // Prevent focus outline lingering on moved button\
+      noBtn.blur();\
+    \});\
+\
+    // Keep NO button in-bounds on resize\
+    window.addEventListener('resize', () => \{\
+      if (noBtn.classList.contains('no-fixed'))\{\
+        moveNoButton();\
+      \}\
+    \});\
+\
+    // Keyboard niceties: pressing Enter on refresh if focused, etc. already handled by buttons.\
+  </script>\
+</body>\
+</html>\
+}
