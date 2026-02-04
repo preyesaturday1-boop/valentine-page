@@ -3,18 +3,17 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>404 → Valentine</title>
+  <title>Lilian 💖</title>
 
   <style>
     :root {
-      --bg1: #ffdde1;
-      --bg2: #ee9ca7;
-      --card: rgba(255,255,255,.75);
-      --text: #1d1b20;
-      --muted: #555;
+      --bg1: #fbcfe8;
+      --bg2: #c7d2fe;
+      --card: rgba(255,255,255,0.8);
+      --text: #1f2937;
+      --muted: #6b7280;
       --radius: 22px;
-      --shadow: 0 18px 40px rgba(0,0,0,.12);
-      --accent: #ff4d6d;
+      --shadow: 0 20px 40px rgba(0,0,0,0.12);
       --ease: cubic-bezier(.2,.8,.2,1);
     }
 
@@ -25,7 +24,7 @@
       margin: 0;
       font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
       background: linear-gradient(135deg, var(--bg1), var(--bg2));
-      transition: background 0.7s var(--ease);
+      transition: background 0.8s var(--ease);
       overflow: hidden;
     }
 
@@ -58,7 +57,7 @@
     }
 
     .row {
-      margin-top: 22px;
+      margin-top: 24px;
       display: flex;
       gap: 14px;
       justify-content: center;
@@ -67,20 +66,20 @@
 
     button {
       border: none;
-      padding: 12px 22px;
+      padding: 12px 24px;
       border-radius: 999px;
       font-weight: 600;
       cursor: pointer;
-      box-shadow: 0 10px 24px rgba(0,0,0,.15);
+      box-shadow: 0 10px 24px rgba(0,0,0,0.15);
       transition: transform .15s ease, opacity .4s ease;
     }
 
     button:active {
-      transform: scale(.97);
+      transform: scale(.96);
     }
 
     .primary {
-      background: linear-gradient(135deg, var(--accent), #ff8fab);
+      background: linear-gradient(135deg, #ec4899, #f472b6);
       color: white;
     }
 
@@ -107,10 +106,10 @@
     }
 
     .agreement {
-      margin-top: 20px;
+      margin-top: 22px;
       padding: 18px;
       border-radius: 16px;
-      background: rgba(255,255,255,.6);
+      background: rgba(255,255,255,0.65);
       opacity: 0;
       transform: translateY(10px);
       transition: opacity .5s var(--ease), transform .5s var(--ease);
@@ -122,9 +121,7 @@
       transform: translateY(0);
     }
 
-    ul {
-      margin: 10px 0 0;
-    }
+    ul { margin: 10px 0 0; }
 
     #confetti {
       position: fixed;
@@ -137,14 +134,11 @@
       position: absolute;
       width: 10px;
       height: 14px;
-      background: red;
       animation: fall linear forwards;
     }
 
     @keyframes fall {
-      to {
-        transform: translateY(110vh) rotate(720deg);
-      }
+      to { transform: translateY(110vh) rotate(720deg); }
     }
 
     .no-fixed {
@@ -164,7 +158,7 @@
     <!-- 404 SCREEN -->
     <div id="screen404" class="screen">
       <h1>Page Not Found</h1>
-      <p>Oops — it looks like this page took a little detour. Want to try again?</p>
+      <p>Looks like love redirected you 😌</p>
       <div class="row">
         <button id="refresh" class="primary">Refresh</button>
       </div>
@@ -172,8 +166,8 @@
 
     <!-- VALENTINE SCREEN -->
     <div id="screenVal" class="screen hidden">
-      <h1>Will you be my Valentine?</h1>
-      <p>Choose wisely. Your answer may cause spontaneous happiness.</p>
+      <h1>Lilian 💖 will you be my Valentine?</h1>
+      <p>This page was made just for you.</p>
 
       <div id="buttons" class="row">
         <button id="yes" class="yes">YES</button>
@@ -183,11 +177,11 @@
       <div id="agreement" class="agreement">
         <strong>By clicking YES you agree to:</strong>
         <ul>
-          <li>Unlimited cuddles</li>
-          <li>Lifetime supply of bad puns</li>
-          <li>Mutual pizza stealing rights — effective immediately!</li>
+          <li>Unlimited cuddles and forehead kisses</li>
+          <li>Laughing at silly jokes (even bad ones)</li>
+          <li>Sharing food, playlists, and quiet moments — effective immediately 💕</li>
         </ul>
-        <p style="margin-top:10px;">🧑‍💻 full stack engineer.</p>
+        <p style="margin-top:10px;">💌 from Preye</p>
       </div>
     </div>
 
@@ -195,31 +189,30 @@
 </div>
 
 <script>
-  const screen404 = document.getElementById('screen404');
-  const screenVal = document.getElementById('screenVal');
-  const refreshBtn = document.getElementById('refresh');
-  const yesBtn = document.getElementById('yes');
-  const noBtn = document.getElementById('no');
-  const agreement = document.getElementById('agreement');
-  const buttons = document.getElementById('buttons');
-  const confetti = document.getElementById('confetti');
+  const screen404 = document.getElementById("screen404");
+  const screenVal = document.getElementById("screenVal");
+  const refreshBtn = document.getElementById("refresh");
+  const yesBtn = document.getElementById("yes");
+  const noBtn = document.getElementById("no");
+  const agreement = document.getElementById("agreement");
+  const buttons = document.getElementById("buttons");
+  const confetti = document.getElementById("confetti");
 
-  let noClicks = 0;
   let yesClicked = false;
 
   refreshBtn.onclick = () => {
-    screen404.classList.add('hidden');
-    setTimeout(() => screenVal.classList.remove('hidden'), 150);
+    screen404.classList.add("hidden");
+    setTimeout(() => screenVal.classList.remove("hidden"), 200);
   };
 
   yesBtn.onclick = () => {
     if (yesClicked) return;
     yesClicked = true;
 
-    agreement.classList.add('show');
+    agreement.classList.add("show");
 
     setTimeout(() => {
-      buttons.style.opacity = '0';
+      buttons.style.opacity = "0";
     }, 1000);
 
     launchConfetti(5000);
@@ -228,29 +221,31 @@
   noBtn.onclick = () => {
     if (yesClicked) return;
 
-    noClicks++;
-    noBtn.classList.add('no-fixed');
+    noBtn.classList.add("no-fixed");
+    noBtn.textContent = "Try again 😏";
 
-    noBtn.style.left = Math.random() * (window.innerWidth - 120) + 'px';
-    noBtn.style.top = Math.random() * (window.innerHeight - 50) + 'px';
+    noBtn.style.left = Math.random() * (window.innerWidth - 120) + "px";
+    noBtn.style.top = Math.random() * (window.innerHeight - 60) + "px";
 
     document.body.style.background =
-      `linear-gradient(135deg, hsl(${Math.random()*360},80%,85%), hsl(${Math.random()*360},80%,75%))`;
+      `linear-gradient(135deg,
+        hsl(${Math.random()*360},80%,85%),
+        hsl(${Math.random()*360},80%,75%))`;
   };
 
   function launchConfetti(duration) {
     const start = Date.now();
-    const colors = ['#ff4d6d','#22c55e','#7c3aed','#f59e0b','#60a5fa'];
+    const colors = ["#ec4899","#22c55e","#8b5cf6","#f59e0b","#60a5fa"];
 
     function drop() {
       if (Date.now() - start > duration) return;
 
-      for (let i = 0; i < 10; i++) {
-        const p = document.createElement('div');
-        p.className = 'piece';
-        p.style.left = Math.random() * window.innerWidth + 'px';
+      for (let i = 0; i < 12; i++) {
+        const p = document.createElement("div");
+        p.className = "piece";
+        p.style.left = Math.random() * window.innerWidth + "px";
         p.style.background = colors[Math.floor(Math.random()*colors.length)];
-        p.style.animationDuration = (Math.random()*2 + 2) + 's';
+        p.style.animationDuration = (Math.random()*2 + 2) + "s";
         confetti.appendChild(p);
         setTimeout(() => p.remove(), 4000);
       }
