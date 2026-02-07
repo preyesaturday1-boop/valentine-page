@@ -1,151 +1,150 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Lilian 💖</title>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>For Lilian 💖</title>
 
-  <style>
-    :root {
-      --bg1: #fbcfe8;
-      --bg2: #c7d2fe;
-      --card: rgba(255,255,255,0.8);
-      --text: #1f2937;
-      --muted: #6b7280;
-      --radius: 22px;
-      --shadow: 0 20px 40px rgba(0,0,0,0.12);
-      --ease: cubic-bezier(.2,.8,.2,1);
-    }
+<style>
+:root{
+  --bg1:#fde2e4;
+  --bg2:#cdb4db;
+  --card:rgba(255,255,255,.85);
+  --text:#1f2937;
+  --muted:#6b7280;
+  --radius:26px;
+  --shadow:0 22px 45px rgba(0,0,0,.15);
+  --ease:cubic-bezier(.2,.8,.2,1);
+}
 
-    * { box-sizing: border-box; }
+*{box-sizing:border-box}
+html,body{
+  height:100%;
+  margin:0;
+  font-family:system-ui,-apple-system,"Segoe UI",sans-serif;
+  background:linear-gradient(135deg,var(--bg1),var(--bg2));
+  transition:background .8s var(--ease);
+  overflow:hidden;
+}
 
-    html, body {
-      height: 100%;
-      margin: 0;
-      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      background: linear-gradient(135deg, var(--bg1), var(--bg2));
-      transition: background 0.8s var(--ease);
-      overflow: hidden;
-    }
+.wrap{
+  min-height:100%;
+  display:grid;
+  place-items:center;
+  padding:24px;
+}
 
-    .wrap {
-      min-height: 100%;
-      display: grid;
-      place-items: center;
-      padding: 24px;
-    }
+.card{
+  width:min(720px,92vw);
+  background:var(--card);
+  border-radius:var(--radius);
+  box-shadow:var(--shadow);
+  padding:32px;
+  text-align:center;
+  position:relative;
+}
 
-    .card {
-      width: min(720px, 92vw);
-      background: var(--card);
-      border-radius: var(--radius);
-      box-shadow: var(--shadow);
-      padding: 32px;
-      text-align: center;
-      position: relative;
-    }
+h1{
+  font-size:clamp(28px,4vw,42px);
+  margin:12px 0;
+}
 
-    h1 {
-      margin: 0 0 12px;
-      font-size: clamp(28px, 4vw, 44px);
-    }
+p{
+  color:var(--muted);
+  margin:0;
+}
 
-    p {
-      margin: 0;
-      color: var(--muted);
-      font-size: 16px;
-    }
+.row{
+  margin-top:24px;
+  display:flex;
+  gap:14px;
+  justify-content:center;
+  flex-wrap:wrap;
+}
 
-    .row {
-      margin-top: 24px;
-      display: flex;
-      gap: 14px;
-      justify-content: center;
-      flex-wrap: wrap;
-    }
+button{
+  border:none;
+  padding:12px 26px;
+  border-radius:999px;
+  font-weight:600;
+  cursor:pointer;
+  box-shadow:0 10px 25px rgba(0,0,0,.18);
+  transition:transform .15s ease,opacity .4s ease;
+}
 
-    button {
-      border: none;
-      padding: 12px 24px;
-      border-radius: 999px;
-      font-weight: 600;
-      cursor: pointer;
-      box-shadow: 0 10px 24px rgba(0,0,0,0.15);
-      transition: transform .15s ease, opacity .4s ease;
-    }
+button:active{transform:scale(.96)}
 
-    button:active {
-      transform: scale(.96);
-    }
+.primary{
+  background:linear-gradient(135deg,#ec4899,#f472b6);
+  color:#fff;
+}
+.yes{
+  background:linear-gradient(135deg,#22c55e,#10b981);
+  color:#fff;
+}
+.no{
+  background:linear-gradient(135deg,#ef4444,#fb7185);
+  color:#fff;
+}
 
-    .primary {
-      background: linear-gradient(135deg, #ec4899, #f472b6);
-      color: white;
-    }
+.screen{
+  transition:opacity .5s var(--ease),transform .5s var(--ease);
+}
+.hidden{
+  opacity:0;
+  transform:translateY(12px);
+  pointer-events:none;
+  position:absolute;
+  inset:32px;
+}
 
-    .yes {
-      background: linear-gradient(135deg, #22c55e, #10b981);
-      color: white;
-    }
+.teddy{
+  font-size:96px;
+  margin:10px 0;
+  animation:bounce 2.5s infinite;
+}
+@keyframes bounce{
+  0%,100%{transform:translateY(0)}
+  50%{transform:translateY(-8px)}
+}
 
-    .no {
-      background: linear-gradient(135deg, #ef4444, #fb7185);
-      color: white;
-    }
+.agreement{
+  margin-top:22px;
+  padding:20px;
+  border-radius:18px;
+  background:rgba(255,255,255,.65);
+  text-align:left;
+  opacity:0;
+  transform:translateY(10px);
+  transition:opacity .5s var(--ease),transform .5s var(--ease);
+}
+.agreement.show{
+  opacity:1;
+  transform:translateY(0);
+}
 
-    .screen {
-      transition: opacity .5s var(--ease), transform .5s var(--ease);
-    }
+ul{margin:10px 0 0}
 
-    .hidden {
-      opacity: 0;
-      transform: translateY(10px);
-      pointer-events: none;
-      position: absolute;
-      inset: 32px;
-    }
+#confetti{
+  position:fixed;
+  inset:0;
+  pointer-events:none;
+}
+.piece{
+  position:absolute;
+  width:10px;
+  height:14px;
+  animation:fall linear forwards;
+}
+@keyframes fall{
+  to{transform:translateY(110vh) rotate(720deg)}
+}
 
-    .agreement {
-      margin-top: 22px;
-      padding: 18px;
-      border-radius: 16px;
-      background: rgba(255,255,255,0.65);
-      opacity: 0;
-      transform: translateY(10px);
-      transition: opacity .5s var(--ease), transform .5s var(--ease);
-      text-align: left;
-    }
-
-    .agreement.show {
-      opacity: 1;
-      transform: translateY(0);
-    }
-
-    ul { margin: 10px 0 0; }
-
-    #confetti {
-      position: fixed;
-      inset: 0;
-      pointer-events: none;
-      overflow: hidden;
-    }
-
-    .piece {
-      position: absolute;
-      width: 10px;
-      height: 14px;
-      animation: fall linear forwards;
-    }
-
-    @keyframes fall {
-      to { transform: translateY(110vh) rotate(720deg); }
-    }
-
-    .no-fixed {
-      position: fixed !important;
-      z-index: 10;
-    }
-  </style>
+.no-fixed{
+  position:fixed!important;
+  z-index:10;
+}
+</style>
 </head>
 
 <body>
@@ -153,106 +152,99 @@
 <div id="confetti"></div>
 
 <div class="wrap">
-  <div class="card">
+<div class="card">
 
-    <!-- 404 SCREEN -->
-    <div id="screen404" class="screen">
-      <h1>Page Not Found</h1>
-      <p>Looks like love redirected you 😌</p>
-      <div class="row">
-        <button id="refresh" class="primary">Refresh</button>
-      </div>
-    </div>
-
-    <!-- VALENTINE SCREEN -->
-    <div id="screenVal" class="screen hidden">
-      <h1>Lilian 💖 will you be my Valentine?</h1>
-      <p>This page was made just for you.</p>
-
-      <div id="buttons" class="row">
-        <button id="yes" class="yes">YES</button>
-        <button id="no" class="no">NO</button>
-      </div>
-
-      <div id="agreement" class="agreement">
-        <strong>By clicking YES you agree to:</strong>
-        <ul>
-          <li>Unlimited cuddles and forehead kisses</li>
-          <li>Laughing at silly jokes (even bad ones)</li>
-          <li>Sharing food, playlists, and quiet moments — effective immediately 💕</li>
-        </ul>
-        <p style="margin-top:10px;">💌 from Preye</p>
-      </div>
-    </div>
-
+<!-- 404 SCREEN -->
+<div id="screen404" class="screen">
+  <div class="teddy">🧸❤️</div>
+  <h1>Oops… wrong page</h1>
+  <p>But maybe the right feeling 😉</p>
+  <div class="row">
+    <button id="refresh" class="primary">Open 💖</button>
   </div>
 </div>
 
+<!-- VALENTINE SCREEN -->
+<div id="screenVal" class="screen hidden">
+  <div class="teddy">🧸💘</div>
+  <h1>Lilian, will you be my Valentine?</h1>
+  <p>I promise warmth, laughter, and very good vibes.</p>
+
+  <div id="buttons" class="row">
+    <button id="yes" class="yes">YES 💕</button>
+    <button id="no" class="no">NO 😅</button>
+  </div>
+
+  <div id="agreement" class="agreement">
+    <strong>By clicking YES, you agree to:</strong>
+    <ul>
+      <li>Pizza nights and shared slices 🍕</li>
+      <li>Wine, soft music, and long conversations 🍷</li>
+      <li>Kisses, cuddles, and very close moments 😌</li>
+      <li>Feeling wanted and appreciated — immediately 💖</li>
+    </ul>
+    <p style="margin-top:10px;">💌 from Preye</p>
+  </div>
+</div>
+
+</div>
+</div>
+
 <script>
-  const screen404 = document.getElementById("screen404");
-  const screenVal = document.getElementById("screenVal");
-  const refreshBtn = document.getElementById("refresh");
-  const yesBtn = document.getElementById("yes");
-  const noBtn = document.getElementById("no");
-  const agreement = document.getElementById("agreement");
-  const buttons = document.getElementById("buttons");
-  const confetti = document.getElementById("confetti");
+const screen404=document.getElementById("screen404");
+const screenVal=document.getElementById("screenVal");
+const refreshBtn=document.getElementById("refresh");
+const yesBtn=document.getElementById("yes");
+const noBtn=document.getElementById("no");
+const agreement=document.getElementById("agreement");
+const buttons=document.getElementById("buttons");
+const confetti=document.getElementById("confetti");
 
-  let yesClicked = false;
+let yesClicked=false;
 
-  refreshBtn.onclick = () => {
-    screen404.classList.add("hidden");
-    setTimeout(() => screenVal.classList.remove("hidden"), 200);
-  };
+refreshBtn.onclick=()=>{
+  screen404.classList.add("hidden");
+  setTimeout(()=>screenVal.classList.remove("hidden"),200);
+};
 
-  yesBtn.onclick = () => {
-    if (yesClicked) return;
-    yesClicked = true;
+yesBtn.onclick=()=>{
+  if(yesClicked)return;
+  yesClicked=true;
+  agreement.classList.add("show");
+  setTimeout(()=>buttons.style.opacity="0",1000);
+  confettiRain(5000);
+};
 
-    agreement.classList.add("show");
+noBtn.onclick=()=>{
+  if(yesClicked)return;
+  noBtn.classList.add("no-fixed");
+  noBtn.textContent="Try again 😏";
+  noBtn.style.left=Math.random()*(window.innerWidth-140)+"px";
+  noBtn.style.top=Math.random()*(window.innerHeight-60)+"px";
+  document.body.style.background=
+    `linear-gradient(135deg,
+      hsl(${Math.random()*360},80%,85%),
+      hsl(${Math.random()*360},80%,75%))`;
+};
 
-    setTimeout(() => {
-      buttons.style.opacity = "0";
-    }, 1000);
-
-    launchConfetti(5000);
-  };
-
-  noBtn.onclick = () => {
-    if (yesClicked) return;
-
-    noBtn.classList.add("no-fixed");
-    noBtn.textContent = "Try again 😏";
-
-    noBtn.style.left = Math.random() * (window.innerWidth - 120) + "px";
-    noBtn.style.top = Math.random() * (window.innerHeight - 60) + "px";
-
-    document.body.style.background =
-      `linear-gradient(135deg,
-        hsl(${Math.random()*360},80%,85%),
-        hsl(${Math.random()*360},80%,75%))`;
-  };
-
-  function launchConfetti(duration) {
-    const start = Date.now();
-    const colors = ["#ec4899","#22c55e","#8b5cf6","#f59e0b","#60a5fa"];
-
-    function drop() {
-      if (Date.now() - start > duration) return;
-
-      for (let i = 0; i < 12; i++) {
-        const p = document.createElement("div");
-        p.className = "piece";
-        p.style.left = Math.random() * window.innerWidth + "px";
-        p.style.background = colors[Math.floor(Math.random()*colors.length)];
-        p.style.animationDuration = (Math.random()*2 + 2) + "s";
-        confetti.appendChild(p);
-        setTimeout(() => p.remove(), 4000);
-      }
-      requestAnimationFrame(drop);
+function confettiRain(duration){
+  const start=Date.now();
+  const colors=["#ec4899","#22c55e","#8b5cf6","#f59e0b","#60a5fa"];
+  function drop(){
+    if(Date.now()-start>duration)return;
+    for(let i=0;i<12;i++){
+      const p=document.createElement("div");
+      p.className="piece";
+      p.style.left=Math.random()*window.innerWidth+"px";
+      p.style.background=colors[Math.floor(Math.random()*colors.length)];
+      p.style.animationDuration=(Math.random()*2+2)+"s";
+      confetti.appendChild(p);
+      setTimeout(()=>p.remove(),4000);
     }
-    drop();
+    requestAnimationFrame(drop);
   }
+  drop();
+}
 </script>
 
 </body>
